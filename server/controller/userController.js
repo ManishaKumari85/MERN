@@ -49,18 +49,18 @@ const loginController = async (req, res) => {
     if (!email || !password)
       return res
         .status(404)
-        .send({ success: false, message: "Invalid email or password" });
+        .send({success: false, message: "Invalid email or password" });
     const user = await userModel.findOne({ email });
     if (!user)
       return res
         .status(404)
-        .send({ success: false, message: "email is not registerd" });
+        .send({success: false, message: "email is not registerd" });
 
     const match = await comparePassword(password, user.password);
     if (!match)
       return res
         .status(400)
-        .send({ success: false, message: "Invalid password" });
+        .send({success: false, message: "Invalid password" });
 
     //token
     const token = await Jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
