@@ -10,8 +10,8 @@ Description:{
     required:true
 },
 // Image: {
-//     type: String,
-//     required: true,
+//     type:String,
+//     required:true
 // },
 CourseAmmount:{
     type:Number,
