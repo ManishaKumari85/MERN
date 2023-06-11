@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     email:{
         type:String,
         required:true,
+        unique:true,
     },
     
      password: {
@@ -15,18 +16,21 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6
     },
+    token:{
+        type:String, 
+    },
    
     phoneNO:{
         type:Number,
         required:true, 
     },
-     resetToken:{type:String},
-
+    
     reffrealCode:{
         type:Number,
         required:true,     
     },
-    
+   
+
     isAdmin:{
         type:Boolean,
         default:false,    

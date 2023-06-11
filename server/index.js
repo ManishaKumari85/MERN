@@ -6,9 +6,19 @@ import connectDb from "./dbConnection/db.js";
 import userRoute from "./router/userRoute.js"
 import adminRoute from "./router/adminRoute.js"
 
-
 import cors from "cors"
 app.use(cors());
+
+
+
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
+app.use("/",userRoute)
+app.use("/",adminRoute)
+
+//static image folder
+ app.use("/images",express.static("./images"))
 
 
  const MONGO_URL = process.env.MONGO_URL
@@ -16,10 +26,6 @@ app.use(cors());
  connectDb(MONGO_URL)
  
 
-
-app.use(express.json());
-app.use("/",userRoute)
-app.use("/",adminRoute)
 
 
 

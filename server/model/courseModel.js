@@ -9,10 +9,10 @@ Description:{
     type:String,
     required:true
 },
-// Image: {
-//     type:String,
-//     required:true
-// },
+image:{
+    type:String,
+    required:true
+  },
 CourseAmmount:{
     type:Number,
     required:true
